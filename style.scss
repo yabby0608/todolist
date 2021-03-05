@@ -1,0 +1,140 @@
+//背景與 header
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(84, 130, 255), rgb(100, 255, 134));
+}
+
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+//表單物件
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input,
+  button {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+    margin: 0.1rem;
+  }
+
+  input[type="number"] {
+    width: 100px;
+    text-align: center;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: rgb(0, 146, 114);
+    color: white;
+  }
+}
+
+//調整資料區的樣式
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    margin: 0.2rem 0.2rem;
+    //事項完成時標示記號
+    transition: all 0.1s ease;
+
+    p {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.25rem;
+      font-size: 1.75rem;
+    }
+
+    p.todo-text {
+      width: 65%;
+    }
+    p.todo-time {
+      width: 35%;
+      text-align: center;
+    }
+
+    //設定按鈕樣式
+    button {
+      padding: 0.25rem 0.25rem;
+      font-size: 1.75rem;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    button.complete {
+      background-color: rgb(50, 255, 50);
+    }
+    button.trash {
+      background-color: red;
+    }
+  }
+}
+
+//依時間排序-按鈕樣式
+div.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+
+  button {
+    cursor: pointer;
+    background-color: rgb(0, 146, 114);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+  }
+}
+
+//事項完成時標示記號
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+  // transition: all 5s ease; 刪除之後呈現透化的秒數//
+}
+
+//新增事項時彈出動畫
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+//設定移除動畫與特效
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
